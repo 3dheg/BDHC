@@ -31,7 +31,7 @@ RETURNS: dexc_bdhc = rs derivative of exc_bdhc (Rydbergs/rs)
 
 EXAMPLE USAGE:
 
-   PROGRAM main
+    PROGRAM main
 
       USE xc_bdhc_mod
       IMPLICIT NONE
@@ -44,7 +44,7 @@ EXAMPLE USAGE:
       dexc = dexc_bdhc(rs,t,xi,exc0,dexc0)
       write(*,*) exc, dexc
 
-   END PROGRAM main
+    END PROGRAM main
 
 ### Citation
 
