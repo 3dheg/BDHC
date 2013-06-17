@@ -3,7 +3,7 @@ BDHC
 
 Pade fit to the exchange-correlation energy of the 3D homogeneous electron gas
 
-## Use
+### Use
 
 #### Compiling
 
@@ -11,23 +11,27 @@ Pade fit to the exchange-correlation energy of the 3D homogeneous electron gas
 
 DOUBLE PRECISION FUNCTION exc_bdhc(rs,th,xi,exc0,dexc0)
 
-INPUT: rs = Wigner-Seitz radius, scaled by the Bohr radius
-       th = Ratio of temperature to Fermi temperature
-       xi = Spin-polarization (1 = polarized, 0 = unpolarized)
-       exc0 = Exchange-correlation energy for the same system at 0T
+INPUT: 
+rs = Wigner-Seitz radius, scaled by the Bohr radius
+th = Ratio of temperature to Fermi temperature
+xi = Spin-polarization (1 = polarized, 0 = unpolarized)
+exc0 = Exchange-correlation energy for the same system at 0T
 
-RETURNS: exc_bdhc = Exchange-correlation energy (Rydbergs)
+RETURNS:
+exc_bdhc = Exchange-correlation energy (Rydbergs)
 
 
 DOUBLE PRECISION FUNCTION dexc_bdhc(rs,th,xi,exc0,dexc0)
 
-INPUT: rs = Wigner-Seitz radius, scaled by the Bohr radius
-       th = Ratio of temperature to Fermi temperature
-       xi = Spin-polarization (1 = polarized, 0 = unpolarized)
-       exc0 = Exchange-correlation energy for the same system at 0T
-       dexc0 = rs derivative of exc0
+INPUT:
+rs = Wigner-Seitz radius, scaled by the Bohr radius
+th = Ratio of temperature to Fermi temperature
+xi = Spin-polarization (1 = polarized, 0 = unpolarized)
+exc0 = Exchange-correlation energy for the same system at 0T
+dexc0 = rs derivative of exc0
 
-RETURNS: dexc_bdhc = rs derivative of exc_bdhc (Rydbergs/rs)
+RETURNS:
+dexc_bdhc = rs derivative of exc_bdhc (Rydbergs/rs)
 
 EXAMPLE USAGE:
 
