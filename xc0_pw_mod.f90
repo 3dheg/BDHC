@@ -66,7 +66,7 @@
       ecuu=Fuu*ec
       ecdd=Fdd*ec
       return
-      end
+      end subroutine spinres
 
       subroutine frac(rs,z,Fuu)
       implicit none
@@ -98,7 +98,7 @@
           (FuuSKTP-FuuLD)
       Fuu=(FuuHD+Auu*sqrt(rs)+FuuLD*rs*B)/(1.d0+C*sqrt(rs)+B*rs)
       return
-      end
+      end subroutine frac
 
 
       subroutine ecPW(x,y,ec)
@@ -133,7 +133,7 @@
       ec=ec0+alfac*ff/f02*(1.d0-y**4)+(ec1-ec0)*ff*y**4
 !f2py intent(in, out) ec
       return
-      end
+      end subroutine ecPW
 
       subroutine GPW(x,Ac,alfa1,beta1,beta2,beta3,beta4,G)
       implicit none
@@ -142,7 +142,7 @@
          Ac*(beta1*x**0.5d0+                                           &
          beta2*x+beta3*x**1.5d0+beta4*x**2)))
       return
-      end
+      end subroutine GPW
 
 !----------------------------------------------------------------------
 !
@@ -156,7 +156,7 @@
             ex0 = -0.916331/rs
           ENDIF
           CONTINUE
-        END
+        END SUBROUTINE exHF
 
 
         REAL FUNCTION exc0_pw(rs,xi)
