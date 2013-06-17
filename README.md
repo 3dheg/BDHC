@@ -1,15 +1,23 @@
 BDHC
 ====
 
-Pade fit to the exchange-correlation energy of the 3D homogeneous electron gas
+Pade fit to the exchange-correlation energy of the 3D homogeneous electron gas.
 
-### Use
+## Use:
 
-#### Compiling
+### Compiling:
 
-#### Functions
+Since xc_bdhc_mod.f90 is a Fortran 90 module, compilation is straight-forward:
 
-DOUBLE PRECISION FUNCTION exc_bdhc(rs,th,xi,exc0,dexc0)
+`gfortran xc_bdhc_mod.f90 YOURCODE.f90 -o YOURCODE`
+
+To compile the example `bdhc.f90`:
+
+`gfortran xc_bdhc_mod.f90 xc0_pw_mod.f90 bdhc.f90 -o bdhc`
+
+### Functions:
+
+*DOUBLE PRECISION FUNCTION exc_bdhc(rs,th,xi,exc0,dexc0)*
 
 INPUTS:
 * rs = Wigner-Seitz radius, scaled by the Bohr radius
@@ -20,8 +28,9 @@ INPUTS:
 RETURNS:
 * exc_bdhc = Exchange-correlation energy (Rydbergs)
 
+---
 
-DOUBLE PRECISION FUNCTION dexc_bdhc(rs,th,xi,exc0,dexc0)
+*DOUBLE PRECISION FUNCTION dexc_bdhc(rs,th,xi,exc0,dexc0)*
 
 INPUT:
 * rs = Wigner-Seitz radius, scaled by the Bohr radius
@@ -32,6 +41,8 @@ INPUT:
 
 RETURNS:
 * dexc_bdhc = rs derivative of exc_bdhc (Rydbergs/rs)
+
+---
 
 EXAMPLE USAGE:
 
@@ -50,18 +61,14 @@ EXAMPLE USAGE:
 
     END PROGRAM main
 
-### Citation
+## Citation
 
 If you use this module in your calculations, please cite both the fit and original Monte Carlo simulation:
 
-  E. W. Brown, J. L. DuBois, M. Holzmann and D. M. Ceperley
-  [Exchange-correlation energy for the 3D homogeneous electron gas at arbitrary temperature](http://arxiv.org/abs/1306.1863)
-  ArXiv eprints 1306.1863 (cond-mat.str-el)
+  E. W. Brown, J. L. DuBois, M. Holzmann and D. M. Ceperley  
+  [Exchange-correlation energy for the 3D homogeneous electron gas at arbitrary temperature](http://arxiv.org/abs/1306.1863)  
+  ArXiv eprints 1306.1863 (cond-mat.str-el)  
   Submitted to Phys. Rev. B. Rapid Communications (2013)
-
-  E. W. Brown, B. K. Clark, J. L. DuBois, and D. M. Ceperley
-  [Path Integral Monte Carlo simulation of the warm-dense homogeneous electron gas](http://prl.aps.org/abstract/PRL/v110/i14/e146405)  
-  Phys. Rev. Lett. 110, 146405 (2013)
 
   E. W. Brown, B. K. Clark, J. L. DuBois, and D. M. Ceperley  
   [Path Integral Monte Carlo simulation of the warm-dense homogeneous electron gas](http://prl.aps.org/abstract/PRL/v110/i14/e146405)  
@@ -70,8 +77,7 @@ If you use this module in your calculations, please cite both the fit and origin
 Bibtex:
 
     @ARTICLE{2013arXiv1306.1863B,
-       author = {{Brown}, E.~W. and {DuBois}, J.~L. and {Holzmann}, M. and {Ceperley}, D.~M.
-            },
+       author = {{Brown}, E.~W. and {DuBois}, J.~L. and {Holzmann}, M. and {Ceperley}, D.~M.},
         title = "{Exchange-correlation energy for the 3D homogeneous electron gas at arbitrary temperature}",
       journal = {ArXiv e-prints},
     archivePrefix = "arXiv",
