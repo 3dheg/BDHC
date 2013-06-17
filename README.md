@@ -63,6 +63,10 @@ If you use this module in your calculations, please cite both the fit and origin
   [Path Integral Monte Carlo simulation of the warm-dense homogeneous electron gas](http://prl.aps.org/abstract/PRL/v110/i14/e146405)  
   Phys. Rev. Lett. 110, 146405 (2013)
 
+  E. W. Brown, B. K. Clark, J. L. DuBois, and D. M. Ceperley  
+  [Path Integral Monte Carlo simulation of the warm-dense homogeneous electron gas](http://prl.aps.org/abstract/PRL/v110/i14/e146405)  
+  Phys. Rev. Lett. 110, 146405 (2013)
+
 Bibtex:
 
     @ARTICLE{2013arXiv1306.1863B,
