@@ -11,14 +11,10 @@ Pade fit to the exchange-correlation energy of the 3D homogeneous electron gas
 
 DOUBLE PRECISION FUNCTION exc_bdhc(rs,th,xi,exc0,dexc0)
 
-INPUT:
-
+INPUTS
 rs = Wigner-Seitz radius, scaled by the Bohr radius
-
 th = Ratio of temperature to Fermi temperature
-
 xi = Spin-polarization (1 = polarized, 0 = unpolarized)
-
 exc0 = Exchange-correlation energy for the same system at 0T
 
 RETURNS:
