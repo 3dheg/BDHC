@@ -2,17 +2,15 @@
       MODULE xc0_pw_mod
 !   :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 !
-!   Perdew-Zunger
+!   The following was written by Paola Gio-Giorgi with the reference:
 !
-!      citation
+!       P. Gori-Giorgi and J.P. Perdew
+!       Phys. Rev. B 69, 041103(R) (2004)
 !
 !----------------------------------------------------------------------
       IMPLICIT NONE
       CONTAINS
 
-!    Paolo Gio Giorgi:
-!
-!       citations
 !
 ! EXAMPLE: use the subroutine spinres to compute
 ! the spin-resolved correlation energies at z=0.4
