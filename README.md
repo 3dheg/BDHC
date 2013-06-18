@@ -1,37 +1,52 @@
 BDHC
 ====
 
-Pade fit to the exchange-correlation energy of the 3D homogeneous electron gas
+Pade fit to the exchange-correlation energy of the 3D homogeneous electron gas.
 
-## Use
+## Use:
 
-#### Compiling
+### Compiling:
 
-#### Functions
+Since xc_bdhc_mod.f90 is a Fortran 90 module, compilation is straight-forward:
 
-DOUBLE PRECISION FUNCTION exc_bdhc(rs,th,xi,exc0,dexc0)
+`gfortran xc_bdhc_mod.f90 YOURCODE.f90 -o YOURCODE`
 
-INPUT: rs = Wigner-Seitz radius, scaled by the Bohr radius
-       th = Ratio of temperature to Fermi temperature
-       xi = Spin-polarization (1 = polarized, 0 = unpolarized)
-       exc0 = Exchange-correlation energy for the same system at 0T
+To compile the example `bdhc.f90`:
 
-RETURNS: exc_bdhc = Exchange-correlation energy (Rydbergs)
+`gfortran xc_bdhc_mod.f90 xc0_pw_mod.f90 bdhc.f90 -o bdhc`
 
+### Functions:
 
-DOUBLE PRECISION FUNCTION dexc_bdhc(rs,th,xi,exc0,dexc0)
+*DOUBLE PRECISION FUNCTION exc_bdhc(rs,th,xi,exc0,dexc0)*
 
-INPUT: rs = Wigner-Seitz radius, scaled by the Bohr radius
-       th = Ratio of temperature to Fermi temperature
-       xi = Spin-polarization (1 = polarized, 0 = unpolarized)
-       exc0 = Exchange-correlation energy for the same system at 0T
-       dexc0 = rs derivative of exc0
+INPUTS:
+* rs = Wigner-Seitz radius, scaled by the Bohr radius
+* th = Ratio of temperature to Fermi temperature
+* xi = Spin-polarization (1 = polarized, 0 = unpolarized)
+* exc0 = Exchange-correlation energy for the same system at 0T
 
-RETURNS: dexc_bdhc = rs derivative of exc_bdhc (Rydbergs/rs)
+RETURNS:
+* exc_bdhc = Exchange-correlation energy (Rydbergs)
+
+---
+
+*DOUBLE PRECISION FUNCTION dexc_bdhc(rs,th,xi,exc0,dexc0)*
+
+INPUT:
+* rs = Wigner-Seitz radius, scaled by the Bohr radius
+* th = Ratio of temperature to Fermi temperature
+* xi = Spin-polarization (1 = polarized, 0 = unpolarized)
+* exc0 = Exchange-correlation energy for the same system at 0T
+* dexc0 = rs derivative of exc0
+
+RETURNS:
+* dexc_bdhc = rs derivative of exc_bdhc (Rydbergs/rs)
+
+---
 
 EXAMPLE USAGE:
 
-   PROGRAM main
+    PROGRAM main
 
       USE xc_bdhc_mod
       IMPLICIT NONE
@@ -44,26 +59,25 @@ EXAMPLE USAGE:
       dexc = dexc_bdhc(rs,t,xi,exc0,dexc0)
       write(*,*) exc, dexc
 
-   END PROGRAM main
+    END PROGRAM main
 
-### Citation
+## Citation
 
 If you use this module in your calculations, please cite both the fit and original Monte Carlo simulation:
 
-  E. W. Brown, J. L. DuBois, M. Holzmann and D. M. Ceperley
-  [Exchange-correlation energy for the 3D homogeneous electron gas at arbitrary temperature](http://arxiv.org/abs/1306.1863)
-  ArXiv eprints 1306.1863 (cond-mat.str-el)
+  E. W. Brown, J. L. DuBois, M. Holzmann and D. M. Ceperley  
+  [Exchange-correlation energy for the 3D homogeneous electron gas at arbitrary temperature](http://arxiv.org/abs/1306.1863)  
+  ArXiv eprints 1306.1863 (cond-mat.str-el)  
   Submitted to Phys. Rev. B. Rapid Communications (2013)
 
-  E. W. Brown, B. K. Clark, J. L. DuBois, and D. M. Ceperley
+  E. W. Brown, B. K. Clark, J. L. DuBois, and D. M. Ceperley  
   [Path Integral Monte Carlo simulation of the warm-dense homogeneous electron gas](http://prl.aps.org/abstract/PRL/v110/i14/e146405)  
   Phys. Rev. Lett. 110, 146405 (2013)
 
 Bibtex:
 
     @ARTICLE{2013arXiv1306.1863B,
-       author = {{Brown}, E.~W. and {DuBois}, J.~L. and {Holzmann}, M. and {Ceperley}, D.~M.
-            },
+       author = {{Brown}, E.~W. and {DuBois}, J.~L. and {Holzmann}, M. and {Ceperley}, D.~M.},
         title = "{Exchange-correlation energy for the 3D homogeneous electron gas at arbitrary temperature}",
       journal = {ArXiv e-prints},
     archivePrefix = "arXiv",
